@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trunk.core.base.template">
+
+
+	<sql id="Base_Select_Condition">
+		<where>
+			<foreach item="query" index="index" collection="queryBuild.queryItems" open=" " separator="and" close=" ">
+				<include refid="com.trunk.core.base.BaseMapper.Base_Select_QueryItems">
+				</include>
+			</foreach>
+		</where>
+	</sql>
+		
+	<sql id="Base_Select_Condition_Page">
+		<if test="start!=-1">
+			limit ${start},${pageSize}
+		</if>
+	</sql>
+	<sql id="Base_Select_Condition_Order">
+		<if test="orderColumns!=null and orderColumns.size()!=0">
+			order by
+			<foreach item="order" index="index" collection="orderColumns" open=" " separator="," close=" ">
+				${order.column}
+				<choose>
+					<when test="order.isDesc">desc</when>
+					<otherwise>asc</otherwise>
+				</choose>
+			</foreach>
+		</if>
+	</sql>
+	
+	<sql id="Base_Select_Query">
+		<where>
+			<foreach item="query" index="index" collection="conditionQuery.queryBuild.queryItems" open=" " separator="and" close=" ">
+				<include refid="com.trunk.core.base.BaseDomainMapper.Base_Select_QueryItems">
+				</include>
+			</foreach>
+		</where>
+	</sql>
+
+	<sql id="Base_Select_Query_Order">
+		<if test="conditionQuery.orderColumns!=null and conditionQuery.orderColumns.size()!=0">
+			order by
+			<foreach item="order" index="index" collection="conditionQuery.orderColumns" open=" " separator="," close=" ">
+				${order.column}
+				<choose>
+					<when test="order.isDesc">desc</when>
+					<otherwise>asc</otherwise>
+				</choose>
+			</foreach>
+		</if>
+	</sql>
+	
+	<sql id="Base_Select_Query_Page">
+		<if test="conditionQuery.start!=-1">
+			limit ${conditionQuery.start},${conditionQuery.pageSize}
+		</if>
+	</sql>	
+	
+	<sql id="Base_Select_QueryItems">
+		<choose>
+			<when test="query.type=='equal'">
+				${query.column} = #{query.value}
+			</when>
+			<when test="query.type=='notequal'">
+				${query.column} != #{query.value}
+			</when>
+			<when test="query.type=='like'">
+				${query.column} like CONCAT('%',#{query.value},'%' )
+			</when>
+			<when test="query.type=='leftLike'">
+				${query.column} like CONCAT(#{query.value},'%' )
+			</when>
+			<when test="query.type=='rightLike'">
+				${query.column} like CONCAT('%',#{query.value} )
+			</when>
+			<when test="query.type=='greater'">
+				${query.column} &gt; #{query.value}
+			</when>
+			<when test="query.type=='less'">
+				${query.column} &lt; #{query.value}
+			</when>
+			<when test="query.type=='greaterEqual'">
+				${query.column} &gt;= #{query.value}
+			</when>
+			<when test="query.type=='lessEqual'">
+				${query.column} &lt;= #{query.value}
+			</when>
+			<when test="query.type=='include'">
+				<include refid="Extra_Query" />
+			</when>
+			<when test="query.type=='in'">
+				${query.column} in
+				<foreach item="item" index="index" collection="query.value" open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</when>
+		</choose>
+	</sql>
+</mapper>

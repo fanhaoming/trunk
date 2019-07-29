@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/builder" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/com/trunk/core/base/AbstractCondition.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/com/trunk/core/base/BaseMapper.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/com/trunk/core/query/ConditionQuery.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/com/trunk/core/query/OrderBy.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/com/trunk/core/query/OrderByColumn.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/com/trunk/core/query/PageHelp.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/com/trunk/core/query/Query.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/com/trunk/core/query/QueryBuild.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/com/trunk/core/query/QueryItem.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/com/trunk/core/query/ReflectConditionField.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/com/trunk/core/utils/DateHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/com/trunk/core/utils/PropertyNameConvert.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/com/trunk/core/utils/json/SimpleDateSerializer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/support-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/support/src/main/resources/db.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/support/src/main/resources/logback.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/support/src/main/resources/redis.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/support/src/main/resources/spring" charset="UTF-8" />
+  </component>
+</project>

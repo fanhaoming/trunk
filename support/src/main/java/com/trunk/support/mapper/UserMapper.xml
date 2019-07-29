@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trunk.support.dao.UserMapper" >
+
+    <select id="listByCondition" resultMap="com.trunk.support.entity.User" >
+        select
+        username,pwd,icon,nickname
+        from sys_user
+        <include refid="com.trunk.core.base.template.Base_Select_Condition">
+        </include>
+        <include refid="com.trunk.core.base.template.Base_Select_Condition_Order">
+        </include>
+        <include refid="com.trunk.core.base.template.Base_Select_Condition_Page">
+        </include>
+    </select>
+</mapper>
