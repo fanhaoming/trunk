@@ -120,7 +120,7 @@ public class ConditionQuery {
 			sortColumnStr.stream().forEach(sortColumn ->{
 				String column = "";
 				boolean isDesc = true;
-				if(sortColumnStr.contains(" ")){
+				if(sortColumn.indexOf(" ")!=-1){
 					String[] sortColumnArr = sortColumn.split(" ");
 					column = sortColumnArr[0];
 					if(sortColumnArr[1].equals("desc")){
