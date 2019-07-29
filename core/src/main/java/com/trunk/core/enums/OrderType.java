@@ -1,8 +1,10 @@
 package com.trunk.core.enums;
 
 /**
- * Created by Administrator on 2019/7/24.
- */
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 public enum OrderType{
     ASC,
     DESC;

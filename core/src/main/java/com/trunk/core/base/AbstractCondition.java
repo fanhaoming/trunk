@@ -9,7 +9,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 import java.util.List;
-
+/**
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 public abstract class AbstractCondition {
 
 	private Boolean noPage = false;

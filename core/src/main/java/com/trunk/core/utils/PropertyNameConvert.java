@@ -1,7 +1,11 @@
 package com.trunk.core.utils;
 
 import org.apache.commons.lang3.StringUtils;
-
+/**
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 public class PropertyNameConvert {
 
 	/**

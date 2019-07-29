@@ -8,7 +8,11 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+/**
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 public class SimpleDateSerializer extends JsonSerializer<Date> {
 
 	@Override

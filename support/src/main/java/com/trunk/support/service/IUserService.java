@@ -5,8 +5,9 @@ import com.trunk.core.base.BaseService;
 
 
 /**
- * Created by Administrator on 2019/7/5.
- */
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 public interface IUserService extends BaseService<User>{
-
 }

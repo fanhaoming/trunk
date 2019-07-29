@@ -1,11 +1,10 @@
-package com.trunk.support.plugins;
+package com.trunk.core.web;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
@@ -13,8 +12,10 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * Created by Administrator on 2019/7/11.
- */
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 @EnableWebMvc
 @EnableSwagger2
 public class SwaggerApiConfig {
@@ -37,7 +38,7 @@ public class SwaggerApiConfig {
     }
 
     ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("Swagger大标题").description("Swagger小标题").version("0.0.1")
+        return new ApiInfoBuilder().title("Swagger大标题1").description("Swagger小标题1").version("0.0.1")
                 .build();
     }
 }

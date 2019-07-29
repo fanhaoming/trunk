@@ -1,7 +1,11 @@
 package com.trunk.core.query;
 
 import com.trunk.core.base.AbstractCondition;
-
+/**
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 public class PageHelp {
 
 	private static final int DEFAULT_PAGE_SIZE = 15;

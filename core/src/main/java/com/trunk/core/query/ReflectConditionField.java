@@ -6,13 +6,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 public class ReflectConditionField {
 
 	private static ReflectConditionField instance;
 
-	/**
-	 * Singleton access point to the manager.
-	 */
 	public static ReflectConditionField getInstance() {
 		synchronized (ReflectConditionField.class) {
 			if (instance == null) {

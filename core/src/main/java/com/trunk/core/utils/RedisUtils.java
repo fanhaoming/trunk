@@ -2,10 +2,11 @@ package com.trunk.core.utils;
 
 import org.apache.commons.lang3.*;
 import org.springframework.data.redis.core.RedisTemplate;
-
 /**
- * Created by Administrator on 2019/7/17.
- */
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 public class RedisUtils {
     private RedisTemplate<String, Object> redisTemplate;
 

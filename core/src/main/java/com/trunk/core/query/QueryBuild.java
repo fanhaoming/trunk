@@ -2,7 +2,11 @@ package com.trunk.core.query;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 public class QueryBuild {
 
 	public static final String NOT_EQUAL_QUERY = "notequal";

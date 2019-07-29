@@ -3,8 +3,10 @@ package com.trunk.core.utils;
 import java.util.Random;
 
 /**
- * Created by Administrator on 2019/7/23.
- */
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 public class StringHelper {
 
     public static Boolean IsNullOrEmpty(String value) {

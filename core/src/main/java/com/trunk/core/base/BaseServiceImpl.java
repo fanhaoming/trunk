@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 /**
- * Created by Administrator on 2019/7/5.
- */
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T>{
 
     @Autowired

@@ -47,5 +47,5 @@
     </bean>
 
 
-    <bean id="swaggerConfig" class="com.trunk.support.plugins.SwaggerApiConfig"/>
+    <bean id="swaggerConfig" class="com.trunk.core.web.SwaggerApiConfig"/>
 </beans>

@@ -1,5 +1,9 @@
 package com.trunk.core.query;
-
+/**
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 public class QueryItem {
 
 	private String column;

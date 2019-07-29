@@ -9,11 +9,12 @@ import org.springframework.stereotype.Service;
 
 
 /**
- * Created by Administrator on 2019/7/5.
- */
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 @Service
 public class UserServiceImpl extends BaseServiceImpl<User> implements IUserService {
     @Autowired
     UserMapper userMapper;
-
 }

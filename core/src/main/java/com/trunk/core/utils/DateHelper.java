@@ -7,7 +7,11 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
+/**
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 public class DateHelper {
 
 	static final String DATEFORMAT = "yyyy-MM-dd HH:mm:ss";

@@ -6,7 +6,7 @@
 	<sql id="Base_Select_Condition">
 		<where>
 			<foreach item="query" index="index" collection="queryBuild.queryItems" open=" " separator="and" close=" ">
-				<include refid="com.trunk.core.base.BaseMapper.Base_Select_QueryItems">
+				<include refid="com.trunk.core.base.template.Base_Select_QueryItems">
 				</include>
 			</foreach>
 		</where>

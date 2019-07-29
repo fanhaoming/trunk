@@ -12,6 +12,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * @author fanhaoming
+ * @Description TODO
+ * @Version
+ **/
 public class ConditionQuery {
 
 	private AbstractCondition condition;
