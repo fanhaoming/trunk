@@ -3,7 +3,9 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file url="file://$PROJECT_DIR$/builder/overlays" />
     <file type="web" url="file://$PROJECT_DIR$/builder" />
-    <file type="web" url="file://$PROJECT_DIR$/support-web" />
+    <file type="web" url="file://$PROJECT_DIR$/core-api" />
+    <file type="web" url="file://$PROJECT_DIR$/mobile-api" />
+    <file type="web" url="file://$PROJECT_DIR$/support-api" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

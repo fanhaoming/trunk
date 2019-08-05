@@ -9,5 +9,6 @@ import com.trunk.core.base.BaseService;
  * @Description TODO
  * @Version
  **/
-public interface IUserService extends BaseService<User>{
+public interface UserService extends BaseService<User>{
+
 }

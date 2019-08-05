@@ -11,7 +11,9 @@
        http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:property-placeholder location="classpath:db.properties"/>
-    <context:component-scan base-package="com.trunk.*.dao,com.trunk.*.service"/>
+    <context:component-scan base-package="com.trunk.core,com.trunk.*.dao,com.trunk.*.service"/>
+
+
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
         <property name="driverClassName" value="${jdbc.driverClass}"/>
         <property name="url" value="${jdbc.jdbcUrl}"/>
@@ -57,7 +59,7 @@
         <property name="typeAliasesPackage" value="com.trunk.support.entity"/>
         <property name="mapperLocations" >
             <array>
-                <value>classpath*:com/trunk/core/base/*.xml</value>
+                <value>classpath*:com/trunk/core/*/*Mapper.xml</value>
                 <value>classpath*:com/trunk/*/mapper/*.xml</value>
             </array>
         </property>
@@ -66,7 +68,7 @@
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
-        <property name="basePackage" value="com.trunk.*.dao" />
+        <property name="basePackage" value="com.trunk.*.dao,com.trunk.core.quartz" />
     </bean>
 
 
@@ -81,4 +83,7 @@
     <!-- 可通过注解控制事务 -->
     <tx:annotation-driven transaction-manager="transactionManager" />
     <import resource="classpath:redis.xml"/>
+
+    <import resource="classpath*:com/trunk/core/quartz/quartz.xml"/>
+
 </beans>

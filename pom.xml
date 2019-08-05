@@ -9,10 +9,12 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>support-web</module>
+        <module>support-api</module>
         <module>support</module>
         <module>builder</module>
         <module>core</module>
+        <module>mobile-api</module>
+        <module>core-api</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,6 +25,13 @@
     </properties>
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>com.project.manage</groupId>
+                <artifactId>core-api</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+            </dependency>
             <dependency>
                 <groupId>com.project.manage</groupId>
                 <artifactId>core</artifactId>
@@ -35,13 +44,32 @@
             </dependency>
             <dependency>
                 <groupId>com.project.manage</groupId>
-                <artifactId>support-web</artifactId>
+                <artifactId>support-api</artifactId>
+                <type>war</type>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.project.manage</groupId>
+                <artifactId>mobile-api</artifactId>
                 <type>war</type>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
+
+        <!-- quartz -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz-jobs</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+
         <!-- redis start -->
         <dependency>
             <groupId>redis.clients</groupId>

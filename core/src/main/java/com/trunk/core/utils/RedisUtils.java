@@ -13,21 +13,13 @@ public class RedisUtils {
     public void setRedisTemplate(RedisTemplate<String, Object> redisTemplate) {
         this.redisTemplate = redisTemplate;
     }
-    /**
-     * String类型缓存获取
-     * @param key 键
-     * @return 值
-     */
+
+
     public Object get(String key) {
         return key == null ? null : redisTemplate.opsForValue().get(key);
     }
 
-    /**
-     * String类型缓存保存
-     * @param key 键
-     * @param value 值
-     * @return true：成功；false：失败
-     */
+
     public boolean set(String key, Object value) {
         try {
             if (StringUtils.isNotEmpty(key) && null != value) {
@@ -40,5 +32,15 @@ public class RedisUtils {
         return false;
     }
 
+    public Object hget(String name,Object key){
+        return name == null ? null:redisTemplate.opsForHash().get(name,key);
+    }
 
+    public boolean hset(String  name,Object key,Object value){
+        if (StringUtils.isNotEmpty(name) && null != key && null != value) {
+            redisTemplate.opsForHash().put(name,key,value);
+            return true;
+        }
+        return false;
+    }
 }

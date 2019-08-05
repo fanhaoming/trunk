@@ -1,6 +1,7 @@
 package com.trunk.core.base;
 
 import com.trunk.core.query.ConditionQuery;
+import com.trunk.core.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -14,6 +15,9 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T>{
 
     @Autowired
     BaseMapper<T> baseMapper;
+
+    @Autowired
+    RedisUtils redisUtils;
 
     @Override
     public String insert(T entity) {
@@ -43,7 +47,7 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T>{
 
     @Override
     public int update(T entity) {
-        return baseMapper.update(entity);
+        return baseMapper.updateById(entity);
     }
 
     @Override

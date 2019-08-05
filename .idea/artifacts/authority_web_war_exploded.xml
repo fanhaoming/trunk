@@ -4,7 +4,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="support-web" />
+          <element id="module-output" name="support-api" />
         </element>
         <element id="directory" name="lib">
           <element id="archive" name="authority-1.0-SNAPSHOT.jar">
@@ -48,9 +48,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/support-web/target/authority-web/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/support-api/target/authority-web/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="support-web/web/Web" />
+      <element id="javaee-facet-resources" facet="support-api/web/Web" />
     </root>
   </artifact>
 </component>

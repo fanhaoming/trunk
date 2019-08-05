@@ -50,7 +50,7 @@ public interface BaseMapper<T> {
      * @param entity
      * @return
      */
-    int update(T entity);
+    int updateById(T entity);
 
     /**
      * 删除记录

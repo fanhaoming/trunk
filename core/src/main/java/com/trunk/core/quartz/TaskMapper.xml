@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trunk.core.quartz.TaskMapper">
+
+    <select id="findById" resultType="com.trunk.core.quartz.Task">
+        select
+        *
+        from qrtz_task
+        where id = #{id}
+    </select>
+
+    <update id="updateById" parameterType="com.trunk.core.quartz.Task">
+        update qrtz_task set
+            update_time = #{updateTime},
+            job_name =#{jobName},
+            description =#{description},
+            cron_expression =#{cronExpression},
+            bean_class =#{beanClass},
+            job_status =#{jobStatus},
+            job_group =#{jobGroup}
+    </update>
+    <select id="listByCondition" resultType="com.trunk.core.quartz.Task">
+        select
+        *
+        from qrtz_task
+        <include refid="com.trunk.core.base.template.Base_Select_Condition">
+        </include>
+        <include refid="com.trunk.core.base.template.Base_Select_Condition_Order">
+        </include>
+        <include refid="com.trunk.core.base.template.Base_Select_Condition_Page">
+        </include>
+    </select>
+
+    <insert id="insert">
+        insert into qrtz_task(id,create_time,job_name,description,cron_expression,bean_class,job_status,job_group) VALUES
+            (#{id},#{createTime},#{jobName},#{description},#{cronExpression},#{beanClass},#{jobStatus},#{jobGroup})
+    </insert>
+    <sql id="Extra_Query">
+
+    </sql>
+</mapper>

@@ -2,7 +2,7 @@ package com.trunk.support;
 
 import com.trunk.support.condition.UserCondition;
 import com.trunk.support.entity.User;
-import com.trunk.support.service.IUserService;
+import com.trunk.support.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import java.util.List;
 @ContextConfiguration(locations={"classpath:spring/spring.xml"})
 public class UserTest {
     @Autowired
-    IUserService userServiceImpl;
+    UserService userServiceImpl;
 
     @Test
     public void listByCondition(){
