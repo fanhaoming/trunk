@@ -84,6 +84,6 @@
     <tx:annotation-driven transaction-manager="transactionManager" />
     <import resource="classpath:redis.xml"/>
 
-    <import resource="classpath*:com/trunk/core/quartz/quartz.xml"/>
+    <import resource="classpath:quartz.xml"/>
 
 </beans>

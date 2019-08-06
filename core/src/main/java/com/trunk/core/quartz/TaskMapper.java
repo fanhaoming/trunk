@@ -1,9 +1,12 @@
 package com.trunk.core.quartz;
 
 
-import com.trunk.core.base.BaseMapper;
-import com.trunk.core.quartz.Task;
+import com.trunk.core.quartz.entity.CronTask;
+import com.trunk.core.query.ConditionQuery;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @author fanhaoming
@@ -13,6 +16,8 @@ import org.apache.ibatis.annotations.Mapper;
  * @Version
  **/
 @Mapper
-public interface TaskMapper extends BaseMapper<Task> {
+public interface TaskMapper  {
+    List<CronTask> listCronTasks(ConditionQuery conditionQuery);
 
+    CronTask findOne(@Param("jobName") String jobName,@Param("jobGroup") String jobGroup);
 }

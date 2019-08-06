@@ -1,8 +1,10 @@
 package com.trunk.core.quartz;
 
-import com.trunk.core.base.BaseService;
-import com.trunk.core.quartz.Task;
-import org.quartz.SchedulerException;
+import com.trunk.core.quartz.condition.CronTaskCondition;
+import com.trunk.core.quartz.entity.CronTask;
+
+import javax.annotation.PostConstruct;
+import java.util.List;
 
 
 /**
@@ -12,19 +14,24 @@ import org.quartz.SchedulerException;
  * @Date 2019/8/5 9:28
  * @Version
  **/
-public interface TaskService extends BaseService<Task> {
+public interface TaskService  {
 
-    void initSchedule() throws SchedulerException, Exception;
+    @PostConstruct
+    void initSchedule() ;
 
-    void addJob(Task task) throws Exception;
+    void addJob(CronTask task);
 
-    void saveJob(Task task);
+    void pauseJob(String jobName, String jobGroup);
 
-    void pauseJob(String jobId);
+    void resumeJob(String jobName, String jobGroup);
 
-    void resumeJob(String jobId);
+    void runOnce(String jobName, String jobGroup);
 
-    void runOnce(String jobId);
+    void updateCron(String jobName, String jobGroup, String cronExpression);
 
-    void updateCron(String id, String cronExpression);
+    void deleteCronTask(String jobName, String jobGroup);
+
+    List<CronTask> listCronTasks(CronTaskCondition condition);
+
+    CronTask findOne(String jobName, String jobGroup);
 }

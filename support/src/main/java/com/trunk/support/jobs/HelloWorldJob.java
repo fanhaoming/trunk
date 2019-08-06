@@ -1,6 +1,5 @@
-package com.trunk.core.quartz;
+package com.trunk.support.jobs;
 
-import org.apache.commons.lang3.time.DateUtils;
 import org.quartz.DisallowConcurrentExecution;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
