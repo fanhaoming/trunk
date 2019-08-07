@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trunk.core.quartz.dao.TaskMapper">
+
+    <select id="findOne" resultType="com.trunk.core.quartz.entity.CronTask">
+        SELECT
+            ct.SCHED_NAME,
+            ct.TRIGGER_NAME,
+            ct.TRIGGER_GROUP,
+            ct.cron_expression,
+            ct.time_zone_id,
+            qt.job_name,
+            qt.job_group,
+            qt.description,
+            qt.next_fire_time,
+            qt.prev_fire_time,
+            qt.priority,
+            qt.trigger_state,
+            qt.trigger_type,
+            qt.start_time,
+            qt.end_time,
+            qt.calendar_name,
+            qt.misfire_instr,
+            qt.job_data,
+            qjd.JOB_CLASS_NAME,
+            qjd.IS_NONCONCURRENT
+        FROM
+            qrtz_triggers qt,
+            qrtz_cron_triggers ct,
+            qrtz_job_details qjd
+        WHERE
+            qt.SCHED_NAME = ct.SCHED_NAME
+            AND qt.TRIGGER_NAME = ct.TRIGGER_NAME
+            AND qt.TRIGGER_GROUP = ct.TRIGGER_GROUP
+            and qt.SCHED_NAME = qjd.SCHED_NAME
+            AND qt.JOB_NAME = qjd.JOB_NAME
+            AND qt.JOB_GROUP = qjd.JOB_GROUP
+            and qjd.JOB_NAME = #{jobName}
+            and qjd.JOB_GROUP = #{jobGroup}
+    </select>
+    <select id="listCronTasks" resultType="com.trunk.core.quartz.entity.CronTask">
+        select * from (
+            SELECT
+                ct.SCHED_NAME,
+                ct.TRIGGER_NAME,
+                ct.TRIGGER_GROUP,
+                ct.cron_expression,
+                ct.time_zone_id,
+                qt.job_name,
+                qt.job_group,
+                qt.description,
+                qt.next_fire_time,
+                qt.prev_fire_time,
+                qt.priority,
+                qt.trigger_state,
+                qt.trigger_type,
+                qt.start_time,
+                qt.end_time,
+                qt.calendar_name,
+                qt.misfire_instr,
+                qt.job_data,
+                qjd.JOB_CLASS_NAME,
+                qjd.IS_NONCONCURRENT
+            FROM
+                qrtz_triggers qt,
+                qrtz_cron_triggers ct,
+                qrtz_job_details qjd
+            WHERE
+                qt.SCHED_NAME = ct.SCHED_NAME
+                AND qt.TRIGGER_NAME = ct.TRIGGER_NAME
+                AND qt.TRIGGER_GROUP = ct.TRIGGER_GROUP
+                and qt.SCHED_NAME = qjd.SCHED_NAME
+                AND qt.JOB_NAME = qjd.JOB_NAME
+                AND qt.JOB_GROUP = qjd.JOB_GROUP
+        ) taskResult
+        <include refid="com.trunk.core.base.template.Base_Select_Condition">
+        </include>
+        <include refid="com.trunk.core.base.template.Base_Select_Condition_Order">
+        </include>
+        <include refid="com.trunk.core.base.template.Base_Select_Condition_Page">
+        </include>
+    </select>
+
+    <sql id="Extra_Query">
+
+    </sql>
+</mapper>

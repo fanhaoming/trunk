@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.trunk.core.quartz.TaskMapper">
+<mapper namespace="com.trunk.core.quartz.dao.TaskMapper">
 
     <select id="findOne" resultType="com.trunk.core.quartz.entity.CronTask">
         SELECT

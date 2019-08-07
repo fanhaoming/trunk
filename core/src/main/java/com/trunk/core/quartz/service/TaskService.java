@@ -1,4 +1,4 @@
-package com.trunk.core.quartz;
+package com.trunk.core.quartz.service;
 
 import com.trunk.core.quartz.condition.CronTaskCondition;
 import com.trunk.core.quartz.entity.CronTask;

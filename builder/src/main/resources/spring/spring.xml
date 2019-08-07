@@ -59,8 +59,7 @@
         <property name="typeAliasesPackage" value="com.trunk.support.entity"/>
         <property name="mapperLocations" >
             <array>
-                <value>classpath*:com/trunk/core/*/*Mapper.xml</value>
-                <value>classpath*:com/trunk/*/mapper/*.xml</value>
+                <value>classpath*:com/trunk/**/mapper/*.xml</value>
             </array>
         </property>
         <property name="configLocation" value="classpath:spring/spring-mybatis.xml"/>
@@ -68,7 +67,7 @@
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
-        <property name="basePackage" value="com.trunk.*.dao,com.trunk.core.quartz" />
+        <property name="basePackage" value="com.trunk.**.dao" />
     </bean>
 
 

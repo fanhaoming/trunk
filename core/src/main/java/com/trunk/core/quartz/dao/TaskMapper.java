@@ -1,4 +1,4 @@
-package com.trunk.core.quartz;
+package com.trunk.core.quartz.dao;
 
 
 import com.trunk.core.quartz.entity.CronTask;

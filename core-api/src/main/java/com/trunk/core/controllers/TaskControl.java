@@ -1,6 +1,6 @@
 package com.trunk.core.controllers;
 
-import com.trunk.core.quartz.TaskService;
+import com.trunk.core.quartz.service.TaskService;
 import com.trunk.core.quartz.condition.CronTaskCondition;
 import com.trunk.core.quartz.entity.CronTask;
 import com.trunk.core.web.ResponseResult;
