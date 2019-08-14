@@ -244,6 +244,18 @@
             <artifactId>servlet-api</artifactId>
             <version>2.5</version>
         </dependency>
+
+
+
+
+
+        <!-- start处理跨域的jar -->
+        <dependency>
+            <groupId>com.thetransactioncompany</groupId>
+            <artifactId>cors-filter</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <!-- end处理跨域的jar -->
     </dependencies>
 
 </project>

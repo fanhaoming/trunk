@@ -17,5 +17,7 @@ public class Menu  extends BaseEntity {
     private String name;
     private String parentId;
     private boolean isEnable;
+    private String icon;
+    private Integer sort;
 
 }
