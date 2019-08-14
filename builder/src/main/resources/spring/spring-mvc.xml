@@ -13,14 +13,27 @@
     <mvc:default-servlet-handler />
     <!-- 启动注解驱动的springmvc的功能 -->
     <mvc:annotation-driven>
-        <!--<mvc:message-converters>
-            <bean id="jsonView" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                 <property name="objectMapper">
-                    <bean class="com.project.core.json.JsonObjectMapper"></bean>
+                    <bean class="com.trunk.core.json.JsonObjectMapper"></bean>
                 </property>
             </bean>
-        </mvc:message-converters>-->
+        </mvc:message-converters>
+        <mvc:return-value-handlers>
+            <bean class="com.trunk.core.web.JsonReturnHandler"></bean>
+        </mvc:return-value-handlers>
     </mvc:annotation-driven>
+
+   <!-- <bean id="handler" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="customReturnValueHandlers">
+            <list>
+                <bean class="com.trunk.core.web.JsonReturnHandler"></bean>
+            </list>
+        </property>
+    </bean>-->
+
+
 
     <mvc:resources mapping="/static/js/**" location="/static/js"/>
     <mvc:resources mapping="/static/css/**" location="/static/css"/>

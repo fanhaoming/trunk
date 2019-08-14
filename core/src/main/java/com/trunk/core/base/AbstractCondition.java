@@ -16,7 +16,7 @@ import java.util.List;
  **/
 public abstract class AbstractCondition {
 
-	private Boolean noPage = false;
+	private Boolean noPage = true;
 
 	private Integer page;
 

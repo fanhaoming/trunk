@@ -1,5 +1,7 @@
 package com.trunk.support.controllers;
 
+import com.trunk.core.json.JsonFilter;
+import com.trunk.core.web.ResponseResult;
 import com.trunk.support.condition.UserCondition;
 import com.trunk.support.entity.User;
 import com.trunk.support.service.UserService;
@@ -30,14 +32,13 @@ public class UserControl {
     @Autowired
     RedisUtils redisUtils;
 
-    @RequestMapping
-    @ResponseBody
-    @ApiOperation(value = "查看用户",httpMethod="POST")
-    public List<User> index(@RequestBody UserCondition userCondition) throws Exception {
-        if(true){
-            throw new Exception("");
-        }
-        return userServiceImpl.listByCondition(userCondition);
+    @RequestMapping(produces = "application/json")
+    @ApiOperation(value = "获取用户",httpMethod="POST")
+    @JsonFilter(type=User.class,filter = "pwd")
+    public ResponseResult test(@RequestBody UserCondition userCondition) {
+        return ResponseResult.ok(data -> {
+            data.put("result",userServiceImpl.listByCondition(userCondition));
+        });
     }
 
 

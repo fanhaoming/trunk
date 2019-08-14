@@ -2,6 +2,9 @@ package com.trunk.core.utils;
 
 import org.apache.commons.lang3.*;
 import org.springframework.data.redis.core.RedisTemplate;
+
+import java.util.Map;
+
 /**
  * @author fanhaoming
  * @Description TODO
@@ -18,6 +21,7 @@ public class RedisUtils {
     public Object get(String key) {
         return key == null ? null : redisTemplate.opsForValue().get(key);
     }
+
 
 
     public boolean set(String key, Object value) {
@@ -42,5 +46,24 @@ public class RedisUtils {
             return true;
         }
         return false;
+    }
+
+    public boolean hmset(String name,Map map) {
+        if (StringUtils.isNotEmpty(name) && map != null) {
+            redisTemplate.opsForHash().putAll(name,map);
+            return true;
+        }
+        return false;
+    }
+
+    public Long hsize(String name) {
+        if(StringUtils.isNotBlank(name)) {
+            return redisTemplate.opsForHash().size(name);
+        }
+        return null;
+    }
+
+    public void hclear(String name,Object... obj) {
+        redisTemplate.opsForHash().delete(name,obj);
     }
 }

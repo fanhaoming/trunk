@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trunk.core.dictionary.dao.DictionaryTypeMapper">
+    <resultMap id="dictionaryType" type="com.trunk.core.dictionary.entity.DictionaryType">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="code" property="code" jdbcType="VARCHAR"/>
+        <result column="is_enabled" property="isEnabled" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <collection property="dicts" ofType="com.trunk.core.dictionary.entity.Dictionary">
+            <id column="yid" property="id"/>
+            <result column="yparent_id" property="parentId" jdbcType="VARCHAR"/>
+            <result column="ycode" property="code" jdbcType="VARCHAR"/>
+            <result column="ydictionary_type_id" property="dictionaryTypeId" jdbcType="VARCHAR"/>
+            <result column="yis_enabled" property="isEnabled" jdbcType="INTEGER"/>
+            <result column="yname" property="name" jdbcType="VARCHAR"/>
+        </collection>
+    </resultMap>
+
+
+    <select id="findDicttypeAndDict" resultMap="dictionaryType">
+        select
+            t.id,
+            t.code,
+            t.is_enabled,
+            t.name,
+            y.id yid,
+            y.parent_id yparent_id,
+            y.code ycode,
+            y.dictionary_type_id ydictionary_type_id,
+            y.is_enabled yis_enabled,
+            y.name yname
+        from sys_dictionary_type t left join sys_dictionary y
+        on y.dictionary_type_id = t.id
+
+    </select>
+
+
+
+    <select id="listByCondition" resultType="com.trunk.core.dictionary.entity.DictionaryType">
+        SELECT
+        *
+        FROM
+        sys_dictionary_type
+        <include refid="com.trunk.core.base.template.Base_Select_Condition"/>
+        <include refid="com.trunk.core.base.template.Base_Select_Condition_Order"/>
+        <include refid="com.trunk.core.base.template.Base_Select_Condition_Page"/>
+    </select>
+
+    <sql id="Extra_Query">
+
+    </sql>
+</mapper>

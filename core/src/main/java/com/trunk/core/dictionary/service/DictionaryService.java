@@ -1,6 +1,8 @@
-package com.trunk.core.dictionary;
+package com.trunk.core.dictionary.service;
 
 import com.trunk.core.base.BaseService;
+import com.trunk.core.dictionary.entity.Dictionary;
+import com.trunk.core.dictionary.entity.DictionaryType;
 
 import java.util.List;
 

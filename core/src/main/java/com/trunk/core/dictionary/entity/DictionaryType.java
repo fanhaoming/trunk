@@ -1,4 +1,4 @@
-package com.trunk.core.dictionary;
+package com.trunk.core.dictionary.entity;
 
 import com.trunk.core.base.BaseEntity;
 import lombok.Getter;
@@ -17,7 +17,7 @@ import java.util.List;
 @Setter
 public class DictionaryType extends BaseEntity {
     private String code;
-    private int isEnabled;
+    private boolean isEnabled;
     private String name;
     private List<Dictionary> dicts;
 }
