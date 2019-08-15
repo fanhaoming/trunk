@@ -1,6 +1,6 @@
 package com.trunk.core.json;
 
-import com.trunk.core.dictionary.DictJsonAnnotation;
+import com.trunk.core.annotation.DictJsonAnnotation;
 
 import java.util.HashMap;
 

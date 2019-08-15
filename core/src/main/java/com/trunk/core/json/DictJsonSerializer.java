@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
-import com.trunk.core.dictionary.DictJsonAnnotation;
+import com.trunk.core.annotation.DictJsonAnnotation;
 import com.trunk.core.dictionary.entity.Dictionary;
 import com.trunk.core.dictionary.service.DictionaryTypeService;
 import com.trunk.core.dictionary.service.impl.DictionaryTypeServiceImpl;

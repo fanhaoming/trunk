@@ -22,6 +22,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
         <springframework.version>4.3.10.RELEASE</springframework.version>
+        <springframework.security.version>4.2.3.RELEASE</springframework.security.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -57,7 +58,28 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
-
+        <!-- Spring Security start-->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${springframework.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${springframework.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${springframework.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${springframework.security.version}</version>
+        </dependency>
+        <!-- Spring Security end-->
         <!-- quartz -->
         <dependency>
             <groupId>org.quartz-scheduler</groupId>
@@ -128,8 +150,8 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${springframework.version}</version>
-
         </dependency>
+
 
         <!-- DB -->
         <dependency>
@@ -256,6 +278,9 @@
             <version>2.5</version>
         </dependency>
         <!-- end处理跨域的jar -->
+
+
+
     </dependencies>
 
 </project>

@@ -7,6 +7,13 @@
           <element id="module-output" name="mobile-api" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:4.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:4.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:4.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-taglibs:4.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:4.2.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.quartz-scheduler:quartz:2.2.1" />
           <element id="library" level="project" name="Maven: c3p0:c3p0:0.9.1.1" />
           <element id="library" level="project" name="Maven: org.quartz-scheduler:quartz-jobs:2.2.1" />
@@ -25,7 +32,6 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.10.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.10.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.10.RELEASE" />

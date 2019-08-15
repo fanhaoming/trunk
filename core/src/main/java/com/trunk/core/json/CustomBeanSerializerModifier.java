@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializationConfig;
 import com.fasterxml.jackson.databind.ser.BeanPropertyWriter;
 import com.fasterxml.jackson.databind.ser.BeanSerializerModifier;
-import com.trunk.core.dictionary.DictJsonAnnotation;
+import com.trunk.core.annotation.DictJsonAnnotation;
 
 import java.util.Date;
 import java.util.List;
