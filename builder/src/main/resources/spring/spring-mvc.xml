@@ -11,8 +11,27 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <context:annotation-config/>
     <mvc:default-servlet-handler />
+
+   <!--
+   <bean id="handler" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="customReturnValueHandlers">错误
+            <list>
+                <bean class="com.trunk.core.web.JsonReturnHandler"></bean>
+            </list>
+        </property>
+    </bean>-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="returnValueHandlers" >
+            <list>
+                <bean class="com.trunk.core.web.JsonReturnHandler"/>
+            </list>
+        </property>
+    </bean>
     <!-- 启动注解驱动的springmvc的功能 -->
     <mvc:annotation-driven>
+        <mvc:return-value-handlers>
+            <bean class="com.trunk.core.web.JsonReturnHandler"></bean>
+        </mvc:return-value-handlers>
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                 <property name="objectMapper">
@@ -20,18 +39,8 @@
                 </property>
             </bean>
         </mvc:message-converters>
-        <mvc:return-value-handlers>
-            <bean class="com.trunk.core.web.JsonReturnHandler"></bean>
-        </mvc:return-value-handlers>
     </mvc:annotation-driven>
 
-   <!-- <bean id="handler" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
-        <property name="customReturnValueHandlers">
-            <list>
-                <bean class="com.trunk.core.web.JsonReturnHandler"></bean>
-            </list>
-        </property>
-    </bean>-->
 
 
 
