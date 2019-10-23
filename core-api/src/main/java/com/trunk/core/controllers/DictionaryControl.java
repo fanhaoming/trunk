@@ -42,7 +42,7 @@ public class DictionaryControl {
 
     @RequestMapping(value = "saveDict",produces = "application/json",method = RequestMethod.POST)
     @ApiOperation(value = "保存数据字典",httpMethod="POST")
-    public String saveDict(@RequestBody Dictionary dictionary){
+    public Dictionary saveDict(@RequestBody Dictionary dictionary){
         return dictionaryServiceImpl.insert(dictionary);
     }
 

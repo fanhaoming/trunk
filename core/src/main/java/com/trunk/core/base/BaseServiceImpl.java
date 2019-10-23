@@ -20,7 +20,7 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T>{
     RedisUtils redisUtils;
 
     @Override
-    public String insert(T entity) {
+    public T insert(T entity) {
         return baseMapper.insert(entity);
     }
 

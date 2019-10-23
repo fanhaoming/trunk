@@ -12,21 +12,20 @@
     <context:annotation-config/>
     <mvc:default-servlet-handler />
 
-   <!--
    <bean id="handler" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
-        <property name="customReturnValueHandlers">错误
+        <property name="customReturnValueHandlers">
             <list>
                 <bean class="com.trunk.core.web.JsonReturnHandler"></bean>
             </list>
         </property>
-    </bean>-->
+    </bean><!--
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
         <property name="returnValueHandlers" >
             <list>
                 <bean class="com.trunk.core.web.JsonReturnHandler"/>
             </list>
         </property>
-    </bean>
+    </bean>-->
     <!-- 启动注解驱动的springmvc的功能 -->
     <mvc:annotation-driven>
         <mvc:return-value-handlers>

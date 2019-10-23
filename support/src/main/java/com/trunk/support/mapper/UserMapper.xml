@@ -4,7 +4,7 @@
 
     <select id="listByCondition" resultType="com.trunk.support.entity.User">
         select
-        *
+        username,password
         from sys_user
         <include refid="com.trunk.core.base.template.Base_Select_Condition">
         </include>
@@ -13,6 +13,26 @@
         <include refid="com.trunk.core.base.template.Base_Select_Condition_Page">
         </include>
     </select>
+
+    <select id="findByUsername" resultType="com.trunk.support.entity.User">
+        select
+        *
+        from sys_user
+        where username = #{username}
+    </select>
+
+    <insert id="insert" parameterType="com.trunk.support.entity.User" >
+        <selectKey keyProperty="id" resultType="java.lang.String" order="BEFORE">
+            select replace(uuid(), '-', '') as id from dual
+        </selectKey>
+        insert into sys_user(id,username,password,icon,type,nickname) values(#{id},
+                                                                             #{username},
+                                                                             #{password},
+                                                                             #{icon},
+                                                                             #{type},
+                                                                             #{nickname})
+    </insert>
+
     <sql id="Extra_Query">
 
     </sql>

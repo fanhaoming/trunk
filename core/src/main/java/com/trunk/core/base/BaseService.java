@@ -10,7 +10,7 @@ import java.util.List;
  * @Version
  **/
 public interface BaseService<T extends BaseEntity> {
-    public String insert(T entity) ;
+    public T insert(T entity) ;
 
     public int insertBatch(List<T> entities);
 

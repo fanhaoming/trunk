@@ -1,8 +1,7 @@
 package com.trunk.core.base;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -12,8 +11,7 @@ import java.util.Date;
  * @Description TODO
  * @Version
  **/
-@Getter
-@Setter
+@Data
 public class BaseEntity implements Serializable {
 
     private String id;
