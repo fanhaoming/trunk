@@ -16,7 +16,7 @@ public interface BaseMapper<T> {
      * @param entity
      * @return
      */
-    T insert(T entity) ;
+    int insert(T entity) ;
 
     /**
      * 批量插入数据

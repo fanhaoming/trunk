@@ -21,7 +21,8 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T>{
 
     @Override
     public T insert(T entity) {
-        return baseMapper.insert(entity);
+        baseMapper.insert(entity);
+        return entity;
     }
 
     @Override

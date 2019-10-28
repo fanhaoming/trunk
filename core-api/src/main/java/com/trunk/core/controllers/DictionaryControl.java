@@ -43,7 +43,8 @@ public class DictionaryControl {
     @RequestMapping(value = "saveDict",produces = "application/json",method = RequestMethod.POST)
     @ApiOperation(value = "保存数据字典",httpMethod="POST")
     public Dictionary saveDict(@RequestBody Dictionary dictionary){
-        return dictionaryServiceImpl.insert(dictionary);
+        dictionaryServiceImpl.insert(dictionary);
+        return dictionary;
     }
 
     @RequestMapping(value = "clearCache",produces = "application/json",method = RequestMethod.POST)

@@ -21,11 +21,12 @@
         where username = #{username}
     </select>
 
-    <insert id="insert" parameterType="com.trunk.support.entity.User" >
+    <insert id="insert">
         <selectKey keyProperty="id" resultType="java.lang.String" order="BEFORE">
             select replace(uuid(), '-', '') as id from dual
         </selectKey>
-        insert into sys_user(id,username,password,icon,type,nickname) values(#{id},
+        insert into sys_user(id,create_time,username,password,icon,type,nickname) values(#{id},
+                                                                             #{createTime},
                                                                              #{username},
                                                                              #{password},
                                                                              #{icon},

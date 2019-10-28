@@ -40,12 +40,11 @@ public class CommonIntercept implements Interceptor {
 					if (SqlCommandType.INSERT.equals(sqlCommandType)) {
 						Object domain = (Object) invocation.getArgs()[1];
 						FastMethod getCreateTimeMethod = FastMethodCall.getInstance().getMethod(domain.getClass(), "getCreateTime");
-						FastMethod setCreateTimeMethod = FastMethodCall.getInstance().getMethod(domain.getClass(), "setCreateTime", Date.class);
+						FastMethod 	setCreateTimeMethod = FastMethodCall.getInstance().getMethod(domain.getClass(), "setCreateTime", Date.class);
 
 						if (getCreateTimeMethod.invoke(domain, null) == null) {
 							setCreateTimeMethod.invoke(domain, new Object[] { new Date() });
 						}
-
 						//TODO :创建人设置
 
 					} else if (SqlCommandType.UPDATE.equals(sqlCommandType)) {

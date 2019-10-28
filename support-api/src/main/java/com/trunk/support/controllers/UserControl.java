@@ -1,5 +1,6 @@
 package com.trunk.support.controllers;
 
+import com.trunk.core.annotation.TestAnnotation;
 import com.trunk.core.json.JsonFilter;
 import com.trunk.core.listeners.LoadPropertiesListener;
 import com.trunk.core.web.ResponseResult;
@@ -11,8 +12,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * @author fanhaoming
@@ -48,11 +47,14 @@ public class UserControl{
 
     @RequestMapping(value="/test",method = RequestMethod.GET)
     @ApiOperation(value = "获取用户",httpMethod="GET")
+    @TestAnnotation
     public ResponseResult test() {
-        return ResponseResult.ok(data -> {
-            data.put("result",LoadPropertiesListener.getMap());
-        });
+        return ResponseResult.ok();
     }
 
-
+    @RequestMapping(value="/test2",method = RequestMethod.GET)
+    @ApiOperation(value = "获取用户2",httpMethod="GET")
+    public ResponseResult test2() {
+        return ResponseResult.ok();
+    }
 }
